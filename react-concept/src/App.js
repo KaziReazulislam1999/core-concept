@@ -23,6 +23,9 @@ function App() {
           I am a REACT Person.
         </p>
         <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product>
+        <Product product={products[2]}></Product>
+
       
 
         <Person name={friends[0]} foods={foods[0]} experience={experience[0]}></Person>
@@ -46,12 +49,13 @@ function Product(props){
     height:'300px',
     margin: '20px',
   }
-  console.log(props);
+  const {name, price} = props.product;
+  
  return(
    <div style={productStyle}>
      
-     <h2> {props.product.name}</h2>
-     <p>{props.product.price}</p>
+     <h2> {name}</h2>
+     <p>{price}</p>
      <button>Buy Now </button>
    </div>
  )
