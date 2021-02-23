@@ -22,9 +22,8 @@ function App() {
         <p>
           I am a REACT Person.
         </p>
-        <Product name={products[0].name} price={products[0].price}></Product>
-        <Product name={products[1].name} price={products[1].price}></Product>
-        <Product name={products[2].name} price={products[2].price}></Product>
+        <Product product={products[0]}></Product>
+      
 
         <Person name={friends[0]} foods={foods[0]} experience={experience[0]}></Person>
         <Person name={friends[1]} foods={foods[1]} experience={experience[1]}></Person>
@@ -47,11 +46,12 @@ function Product(props){
     height:'300px',
     margin: '20px',
   }
+  console.log(props);
  return(
    <div style={productStyle}>
      
-     <h2> {props.name}</h2>
-     <p>{props.price}</p>
+     <h2> {props.product.name}</h2>
+     <p>{props.product.price}</p>
      <button>Buy Now </button>
    </div>
  )
