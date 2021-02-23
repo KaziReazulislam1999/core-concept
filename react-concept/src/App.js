@@ -4,49 +4,35 @@ import "./App.css";
 function App() {
   const friends = ['korim','jamal','nojju', 'kooka','kobooo']
   const foods = ['AluVorta','Dalvaji','DimVuna','DimShutki','MurgiVorta']
+  const experience = ['1 Years','3 Years','5 Years','6 Years','2 Years']
+
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
+        {/* <img src={logo} className='App-logo' alt='logo' /> */}
         <p>
-          Edit KORO <code>src/App.js</code> and save to reload.
+          I am a REACT Person.
         </p>
 
-        <Person name={friends[0]} age="21" food={foods[0]}></Person>
-        <Person name={friends[1]} age="30" food= {foods[1]}></Person>
-        <Person name={friends[2]} age="31" food={foods[2]}></Person>
-        <Person name={friends[3]} age="32" food={foods[3]}></Person>
-        <Person name={friends[4]} age="33" food={foods[4]}></Person>
-
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
+        <Person name={friends[0]} foods={foods[0]} experience={experience[0]}></Person>
+        <Person name={friends[1]} foods={foods[1]} experience={experience[1]}></Person>
+        <Person name={friends[2]} foods={foods[2]} experience={experience[2]}></Person>
+        <Person name={friends[3]} foods={foods[3]} experience={experience[3]}></Person>
       </header>
     </div>
   );
 }
 
-function Person(props) {
- let personStyle={
-  backgroundColor:'red' ,
-  borderRadius:'20px',
-  border:'none',
-  padding:'20px',
-  width:"400px",
-  margin:'10px'
-
- }
-
-  return ( <div style={personStyle}>
-    <h1>Name : {props.name}</h1>
-    <h3>Favorite Food {props.food}</h3>
-  </div>)
-
+function Person(props){
+  return (
+    <div style={{border:'2px solid red', width:'600px', backgroundColor:'red',borderRadius:'20px' ,margin:'20px'}}>
+      <h1>My Name Is : {props.name} </h1>
+      <h3>Favourate Foods : {props.foods}</h3>
+      <p>Experince In Food Design Section : {props.experience}</p>
+    </div>
+  )
 }
 
+
 export default App;
+
