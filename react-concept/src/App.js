@@ -2,26 +2,61 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+
   const friends = ['korim','jamal','nojju', 'kooka','kobooo']
   const foods = ['AluVorta','Dalvaji','DimVuna','DimShutki','MurgiVorta']
   const experience = ['1 Years','3 Years','5 Years','6 Years','2 Years']
 
+  const products = [
+    {name:'Photoshop',price:'70.98$'},
+    {name:'Illustrator',price:'40.98$'},
+    {name:'PDF',price:'10.98$'}
+
+
+]
+
   return (
     <div className='App'>
       <header className='App-header'>
-        {/* <img src={logo} className='App-logo' alt='logo' /> */}
+        <img src={logo} className='App-logo' alt='logo' />
         <p>
           I am a REACT Person.
         </p>
+        <Product name={products[0].name} price={products[0].price}></Product>
+        <Product name={products[1].name} price={products[1].price}></Product>
+        <Product name={products[2].name} price={products[2].price}></Product>
 
         <Person name={friends[0]} foods={foods[0]} experience={experience[0]}></Person>
         <Person name={friends[1]} foods={foods[1]} experience={experience[1]}></Person>
         <Person name={friends[2]} foods={foods[2]} experience={experience[2]}></Person>
         <Person name={friends[3]} foods={foods[3]} experience={experience[3]}></Person>
+
+
       </header>
     </div>
   );
 }
+
+function Product(props){
+  
+  const productStyle ={
+    border:'2px solid red',
+    borderRadius:'5px',
+    backgroundColor:'gray',
+    width:'300px',
+    height:'300px',
+    margin: '20px',
+  }
+ return(
+   <div style={productStyle}>
+     
+     <h2> {props.name}</h2>
+     <p>{props.price}</p>
+     <button>Buy Now </button>
+   </div>
+ )
+}
+
 
 function Person(props){
   return (
