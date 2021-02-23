@@ -9,6 +9,7 @@ function App() {
         <p>
           Edit KORO <code>src/App.js</code> and save to reload.
         </p>
+
         <Person></Person>
         <Person></Person>
         <Person></Person>
@@ -29,7 +30,14 @@ function App() {
 }
 
 function Person() {
-  return (<div style={{border:'2px solid green', backgroundColor:'red' ,margin:'10px' , borderRadius:'20px' }}>
+ let personStyle={
+  border:'2px solid green',
+  backgroundColor:'red' ,
+  borderRadius:'20px'
+
+ }
+
+  return ( <div style={personStyle}>
     <h1>Name : Shakib Al Hasan</h1>
     <h3>Bangladesher Pran</h3>
   </div>)
