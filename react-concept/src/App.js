@@ -69,6 +69,7 @@ function Person(props){
       <h3>Favourate Foods : {props.foods}</h3>
       <p>Experince In Food Design Section : {props.experience}</p>
     </div>
+    
   )
 }
 
